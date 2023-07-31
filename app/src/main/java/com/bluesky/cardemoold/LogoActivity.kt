@@ -54,7 +54,7 @@ class LogoActivity : AppCompatActivity() {
             }
 
             override fun onFailure(call: Call<BrandListResult>, t: Throwable) {
-                
+
             }
 
         })
