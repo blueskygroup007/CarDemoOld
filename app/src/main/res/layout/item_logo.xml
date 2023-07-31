@@ -7,7 +7,7 @@
 
         <variable
             name="item"
-            type="com.bluesky.cardemoold.bean.Result" />
+            type="com.bluesky.cardemoold.bean.Brand" />
     </data>
 
     <LinearLayout
@@ -24,6 +24,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             app:itemImage="@{item.brand_logo}"
+
             app:srcCompat="@mipmap/ic_launcher_round" />
 
         <TextView

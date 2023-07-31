@@ -19,7 +19,7 @@ object ImageViewBindingAdapter {
     // 需要在model的build.gradle中的plugin{}中添加
     @BindingAdapter("itemImage")
     @JvmStatic
-    fun setImage(url: String, image: ImageView) {
+    fun setImage(image: ImageView, url: String) {
         if (TextUtils.isEmpty(url)) {
             image.setImageResource(R.mipmap.ic_launcher_round)
         } else {

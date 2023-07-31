@@ -14,7 +14,7 @@
         android:theme="@style/Theme.CarDemoOld"
         tools:targetApi="31">
         <activity
-            android:name=".BrandActivity"
+            android:name=".LogoActivity"
             android:exported="false">
             <meta-data
                 android:name="android.app.lib_name"

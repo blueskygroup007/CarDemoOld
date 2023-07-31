@@ -6,8 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
-import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.bluesky.cardemoold.R
+import com.bluesky.cardemoold.bean.Brand
 import com.bluesky.cardemoold.databinding.ItemLogoBinding
 
 /**
@@ -18,10 +18,17 @@ import com.bluesky.cardemoold.databinding.ItemLogoBinding
  */
 open class LogoAdapter(
     var ctx: Context,
-    var mData: MutableList<com.bluesky.cardemoold.bean.Result>
+    var mData: MutableList<Brand>
 ) : RecyclerView.Adapter<LogoAdapter.LogoHolder>() {
 
     val inflater = LayoutInflater.from(ctx)
+
+    fun setData(list: List<Brand>?) {
+        if (list != null) {
+            mData.clear()
+            mData.addAll(list)
+        }
+    }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogoHolder {
         val binding: ItemLogoBinding =
