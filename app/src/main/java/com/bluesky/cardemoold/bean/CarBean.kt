@@ -9,8 +9,8 @@ package com.bluesky.cardemoold.bean
 data class BrandListResult(
     val error_code: Int,
     val reason: String,
-    val brand: List<Brand>
-) : java.io.Serializable
+    var result: List<Brand>
+)
 
 data class Brand(
     val brand_logo: String,
@@ -22,7 +22,7 @@ data class Brand(
 data class SeriesListResult(
     val error_code: Int,
     val reason: String,
-    val brand: List<Brand>
+    val result: List<Series>
 )
 
 data class Series(
@@ -32,7 +32,7 @@ data class Series(
     val levelname: String,
     val name: String,
     val sname: String
-)
+):java.io.Serializable
 
 data class ModelsListResult(
     val error_code: Int,

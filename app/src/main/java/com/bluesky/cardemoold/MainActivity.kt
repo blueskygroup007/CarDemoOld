@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.databinding.DataBindingUtil
 import com.bluesky.cardemoold.databinding.ActivityMainBinding
+import com.hjq.permissions.XXPermissions
 
 class MainActivity : AppCompatActivity(), View.OnClickListener {
 
@@ -15,6 +16,9 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         //setContentView(R.layout.activity_main)
+
+        /*XXPermissions.with(this)
+            .permission(Permission.)*/
 
         //DataBinding:4
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
@@ -27,9 +31,11 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
     override fun onClick(v: View?) {
         when (v) {
             binding.btnNews -> {
-                startActivity(Intent(this,LogoActivity::class.java))
+
             }
-            binding.btnBrand -> {}
+            binding.btnBrand -> {
+                startActivity(Intent(this, LogoActivity::class.java))
+            }
 
             else -> {}
         }

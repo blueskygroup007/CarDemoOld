@@ -1,13 +1,18 @@
 package com.bluesky.cardemoold.adapter
 
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
+import android.view.View.OnClickListener
 import android.view.ViewGroup
+import androidx.activity.result.contract.ActivityResultContracts
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bluesky.cardemoold.R
+import com.bluesky.cardemoold.SeriesActivity
 import com.bluesky.cardemoold.bean.Brand
+import com.bluesky.cardemoold.bean.Series
 import com.bluesky.cardemoold.databinding.ItemLogoBinding
 
 /**
@@ -27,20 +32,28 @@ open class LogoAdapter(
         if (list != null) {
             mData.clear()
             mData.addAll(list)
+            notifyDataSetChanged()
         }
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LogoHolder {
+
         val binding: ItemLogoBinding =
             DataBindingUtil.inflate(inflater, R.layout.item_logo, parent, false)
         var holder = LogoHolder(binding.root)
         holder.binding = binding
+
         return holder
     }
 
     override fun onBindViewHolder(holder: LogoHolder, position: Int) {
-        val bean = mData.get(position)
+        val bean = mData[position]
         holder.binding?.item = bean
+        holder.binding?.root?.setOnClickListener {
+            val intent = Intent(ctx, SeriesActivity::class.java)
+            intent.putExtra("brandid", mData[position].id)
+            ctx.startActivity(intent)
+        }
     }
 
     override fun getItemCount(): Int {

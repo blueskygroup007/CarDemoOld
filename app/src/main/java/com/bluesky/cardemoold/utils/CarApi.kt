@@ -17,7 +17,7 @@ import com.bluesky.cardemoold.bean.SeriesListResult
 interface CarApi {
     companion object {
         val baseUrl = "http://apis.juhe.cn/cxdq/"
-        val key = "未申请"
+        val key = "40b9211fdfa5e235fffe5f321b128ab6"
     }
 
     @GET("brand")
